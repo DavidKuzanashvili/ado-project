@@ -21,7 +21,6 @@ namespace HR
 
         private void HRForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void SaveEmployeeBtn_Click(object sender, EventArgs e)
@@ -35,18 +34,16 @@ namespace HR
             string mail = Mail.Text;
 
             //Positon table values
-            string positionName;
-            string dateOfPositionHeld;
+            string positionName = "";
+            string dateOfPositionHeld = DateTime.Now.ToString("yyyy-MM-dd");
 
-            try
+            if(PositionDropDownList.SelectedItem != null)
             {
                 positionName = PositionDropDownList.SelectedItem.ToString();
-                dateOfPositionHeld = DateTime.Now.ToString("yyyy-MM-dd");
-
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please Select Position!");
             }
 
             //Setup
@@ -57,43 +54,49 @@ namespace HR
             cn.ConnectionString = ConfigurationManager.ConnectionStrings["con_string"].ConnectionString;
 
             //Action
-            //try
-            //{
-            //    cn.Open();
-            //    command = cn.CreateCommand();
-            //    transaction = cn.BeginTransaction("AddingEmployee");
-            //    command.Connection = cn;
-            //    command.Transaction = transaction;
+            try
+            {
+                cn.Open();
+                command = cn.CreateCommand();
+                transaction = cn.BeginTransaction("AddingEmployee");
+                command.Connection = cn;
+                command.Transaction = transaction;
 
-            //    try
-            //    {
-            //        command.CommandType = CommandType.Text;
-            //        command.CommandText =
-            //            $"INSERT INTO dbo.Employee(PN, Surname, Name, MobileNumber, BirthDate, Mail) VALUES (N'{personalNumber}', N'{surename}', N'{name}', N'{mobileNumber}', '{birthDay}', N'{mail}')";
-            //        command.ExecuteNonQuery();
-            //        transaction.Commit();
-            //        MessageBox.Show("Employee was added to database");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show($"Commit Exception type: {ex.GetType()}");
-            //        MessageBox.Show(ex.Message);
+                try
+                {
+                    //Insert Employee
+                    command.CommandType = CommandType.Text;
+                    command.CommandText =
+                        $"INSERT INTO dbo.Employee(PN, Surname, Name, MobileNumber, BirthDate, Mail) VALUES (N'{personalNumber}', N'{surename}', N'{name}', N'{mobileNumber}', '{birthDay}', N'{mail}')";
+                    command.ExecuteNonQuery();
+                    //Insert Employee Position
+                    command.CommandText =
+                        $"INSERT INTO dbo.Position(PositionName, DateOfPositionHeld, PN) VALUES (N'{positionName}', '{dateOfPositionHeld}', N'{personalNumber}')";
+                    command.ExecuteNonQuery();
 
-            //        try
-            //        {
-            //            transaction.Rollback();
-            //        }
-            //        catch (Exception tex)
-            //        {
-            //            MessageBox.Show("Rollback Exception Type: " + tex.GetType());
-            //            MessageBox.Show("Message: " + tex.Message);
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+                    transaction.Commit();
+                    MessageBox.Show("Employee was added to database");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Commit Exception type: {ex.GetType()}");
+                    MessageBox.Show(ex.Message);
+
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (Exception tex)
+                    {
+                        MessageBox.Show("Rollback Exception Type: " + tex.GetType());
+                        MessageBox.Show("Message: " + tex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
