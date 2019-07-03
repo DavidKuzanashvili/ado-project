@@ -52,8 +52,8 @@
             this.PositionDropDownList.Items.AddRange(new object[] {
             "Director",
             "Secretary",
-            "Chief of Department",
-            "Main Specialist",
+            "ChiefOfDepartment",
+            "MainSpecialist",
             "Specialist"});
             this.PositionDropDownList.Location = new System.Drawing.Point(42, 106);
             this.PositionDropDownList.Name = "PositionDropDownList";

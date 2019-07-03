@@ -8,3 +8,13 @@ E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.csproj.CoreCompileInputs.cache
 E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.exe
 E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.pdb
 E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.HRForm.resources
+D:\hr\ado-project\HR\bin\Debug\HR.exe.config
+D:\hr\ado-project\HR\bin\Debug\HR.exe
+D:\hr\ado-project\HR\bin\Debug\HR.pdb
+D:\hr\ado-project\HR\obj\Debug\HR.csprojResolveAssemblyReference.cache
+D:\hr\ado-project\HR\obj\Debug\HR.HRForm.resources
+D:\hr\ado-project\HR\obj\Debug\HR.Properties.Resources.resources
+D:\hr\ado-project\HR\obj\Debug\HR.csproj.GenerateResource.Cache
+D:\hr\ado-project\HR\obj\Debug\HR.csproj.CoreCompileInputs.cache
+D:\hr\ado-project\HR\obj\Debug\HR.exe
+D:\hr\ado-project\HR\obj\Debug\HR.pdb
