@@ -1,0 +1,10 @@
+E:\David\Projects\CSharp\HR\HR\bin\Debug\HR.exe.config
+E:\David\Projects\CSharp\HR\HR\bin\Debug\HR.exe
+E:\David\Projects\CSharp\HR\HR\bin\Debug\HR.pdb
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.csprojAssemblyReference.cache
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.Properties.Resources.resources
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.csproj.GenerateResource.cache
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.csproj.CoreCompileInputs.cache
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.exe
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.pdb
+E:\David\Projects\CSharp\HR\HR\obj\Debug\HR.HRForm.resources
